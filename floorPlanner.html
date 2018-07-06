@@ -1,0 +1,67 @@
+<html>
+<head>
+  <script type="text/javascript" src="hc.js"></script>
+  <script src="https://code.highcharts.com/modules/treemap.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+  <style type="text/css" media="screen">
+      body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #F0F0F0;
+      }
+      #container {
+        min-width: 300px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+  </style>
+  <div id="container"></div>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          Highcharts.chart('container', {
+      series: [{
+          type: "treemap",
+          layoutAlgorithm: 'squarified',
+          data: [{
+              name: 'A',
+              value: 6,
+              id: "1",
+              stroke: "#EC2500"
+          }, {
+              name: 'B',
+              value: 2,
+              parent: "1",
+              stroke: "#EC2500"
+          }, {
+              name: 'C',
+              value: 4,
+              parent: "1",
+              stroke: "#EC2500"
+          }, {
+              name: 'D',
+              value: 3
+          }, {
+              name: 'E',
+              value: 2
+          }, {
+              name: 'F',
+              value: 2
+          }, {
+              name: 'G',
+              value: 1
+          }]
+      }],
+      title: {
+          text: 'Floor Map'
+      }
+  });
+      });
+  </script>
+
+</body>
+</html>
