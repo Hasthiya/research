@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- just usingjquery for the $(document).ready() - we don't need it for charting  -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <!-- need the raphael vector library -->
@@ -26,79 +27,116 @@
         body {
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        overflow: scroll;
         background-color: #F0F0F0;
       }
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div id="Plan"></div>
-<div class="container">
-    <div class="left">
-        <label class="label">MasterBedroomHeight</label>
-        <br>
-        <label class="label">MasterBedroomWidth</label>
-        <br>
-        <label class="label">LivingRoomHeight</label>
-        <br>
-        <label class="label">LivingRoomWidth</label>
-        <br>
-        <label class="label">Bathroom1Height</label>
-        <br>
-        <label class="label">Bathroom1Width</label>
-        <br>
-        <label class="label">Bathroom2Height</label>
-        <br>
-        <label class="label">Bathroom2Width</label>
-        <br>
-        <label class="label">KitchenHeight</label>
-        <br>
-        <label class="label">KitchenWidth</label>
-        <br>
-        <label class="label">GuestRoomHeight</label>
-        <br>
-        <label class="label">GuestRoomWidth</label>
-    </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+<div class="row">
+    <div id="Plan"></div>
+    <div class="container">
+        <div class="left">
+            <label class="label">MasterBedroomHeight</label>
+            <br>
+            <label class="label">MasterBedroomWidth</label>
+            <br>
+            <label class="label">LivingRoomHeight</label>
+            <br>
+            <label class="label">LivingRoomWidth</label>
+            <br>
+            <label class="label">Bathroom1Height</label>
+            <br>
+            <label class="label">Bathroom1Width</label>
+            <br>
+            <label class="label">Bathroom2Height</label>
+            <br>
+            <label class="label">Bathroom2Width</label>
+            <br>
+            <label class="label">KitchenHeight</label>
+            <br>
+            <label class="label">KitchenWidth</label>
+            <br>
+            <label class="label">GuestRoomHeight</label>
+            <br>
+            <label class="label">GuestRoomWidth</label>
+        </div>
+        <div class="right">
+            <input type="number" id="MasterBedroomHeight" class="MasterBedroomHeight" placeholder="MasterBedroomHeight">
+            <br>
 
-    <div class="right">
-        <input type="number" id="MasterBedroomHeight" class="MasterBedroomHeight" placeholder="MasterBedroomHeight">
-        <br>
+            <input type="number" id="MasterBedroomWidth" class="MasterBedroomWidth" placeholder="MasterBedroomWidth">
+            <br>
 
-        <input type="number" id="MasterBedroomWidth" class="MasterBedroomWidth" placeholder="MasterBedroomWidth">
-        <br>
+            <input type="number" id="LivingRoomHeight" class="LivingRoomHeight" placeholder="LivingRoomHeight">
+            <br>
 
-        <input type="number" id="LivingRoomHeight" class="LivingRoomHeight" placeholder="LivingRoomHeight">
-        <br>
+            <input type="number" id="LivingRoomWidth" class="LivingRoomWidth" placeholder="LivingRoomWidth">
+            <br>
 
-        <input type="number" id="LivingRoomWidth" class="LivingRoomWidth" placeholder="LivingRoomWidth">
-        <br>
+            <input type="number" id="Bathroom1Height" class="Bathroom1Height" placeholder="Bathroom1Height">
+            <br>
 
-        <input type="number" id="Bathroom1Height" class="Bathroom1Height" placeholder="Bathroom1Height">
-        <br>
+            <input type="number" id="Bathroom1Width" class="Bathroom1Width" placeholder="Bathroom1Width">
+            <br>
 
-        <input type="number" id="Bathroom1Width" class="Bathroom1Width" placeholder="Bathroom1Width">
-        <br>
+            <input type="number" id="Bathroom2Height" class="Bathroom2Height" placeholder="Bathroom2Height">
+            <br>
 
-        <input type="number" id="Bathroom2Height" class="Bathroom2Height" placeholder="Bathroom2Height">
-        <br>
+            <input type="number" id="Bathroom2Width" class="Bathroom2Width" placeholder="Bathroom2Width">
+            <br>
 
-        <input type="number" id="Bathroom2Width" class="Bathroom2Width" placeholder="Bathroom2Width">
-        <br>
+            <input type="number" id="KitchenHeight" class="KitchenHeight" placeholder="KitchenHeight">
+            <br>
 
-        <input type="number" id="KitchenHeight" class="KitchenHeight" placeholder="KitchenHeight">
-        <br>
+            <input type="number" id="KitchenWidth" class="KitchenWidth" placeholder="KitchenWidth">
+            <br>
 
-        <input type="number" id="KitchenWidth" class="KitchenWidth" placeholder="KitchenWidth">
-        <br>
+            <input type="number" id="GuestRoomHeight" class="GuestRoomHeight" placeholder="GuestRoomHeight">
+            <br>
 
-        <input type="number" id="GuestRoomHeight" class="GuestRoomHeight" placeholder="GuestRoomHeight">
-        <br>
-
-        <input type="number" id="GuestRoomWidth" class="GuestRoomWidth" placeholder="GuestRoomWidth">
-        <br>
-        <button id="MyButton" >Generate</button>
-        <button id="demo">Demo</button>
+            <input type="number" id="GuestRoomWidth" class="GuestRoomWidth" placeholder="GuestRoomWidth">
+            <br>
+            <button id="MyButton" >Generate</button>
+            <button id="demo">Demo</button>
+        </div>
     </div>
 </div>
 
@@ -108,12 +146,12 @@
 
             jQuery('#Plan').empty();
 
-            var Masterbedroom = (parseInt($(".MasterBedroomHeight").val(), 10)) * (parseInt($(".MasterBedroomWidth").val(), 10));
-            var LivingRoom = (parseInt($(".LivingRoomHeight").val(), 10)) * (parseInt($(".LivingRoomWidth").val(), 10));
-            var Bathroom1 = (parseInt($(".Bathroom1Height").val(), 10)) * (parseInt($(".Bathroom1Width").val(), 10));
-            var Bathroom2 = (parseInt($(".Bathroom2Height").val(), 10)) * (parseInt($(".Bathroom2Width").val(), 10));
-            var Kitchen = (parseInt($(".KitchenHeight").val(), 10)) * (parseInt($(".KitchenWidth").val(), 10));
-            var GuestRoom = (parseInt($(".GuestRoomHeight").val(), 10)) * (parseInt($(".GuestRoomWidth").val(), 10));
+            let Masterbedroom = (parseInt($(".MasterBedroomHeight").val(), 10)) * (parseInt($(".MasterBedroomWidth").val(), 10));
+            let LivingRoom = (parseInt($(".LivingRoomHeight").val(), 10)) * (parseInt($(".LivingRoomWidth").val(), 10));
+            let Bathroom1 = (parseInt($(".Bathroom1Height").val(), 10)) * (parseInt($(".Bathroom1Width").val(), 10));
+            let Bathroom2 = (parseInt($(".Bathroom2Height").val(), 10)) * (parseInt($(".Bathroom2Width").val(), 10));
+            let Kitchen = (parseInt($(".KitchenHeight").val(), 10)) * (parseInt($(".KitchenWidth").val(), 10));
+            let GuestRoom = (parseInt($(".GuestRoomHeight").val(), 10)) * (parseInt($(".GuestRoomWidth").val(), 10));
 
             if(!isNaN(Masterbedroom) && !isNaN(LivingRoom) && !isNaN(Bathroom1) && !isNaN(Bathroom2) && !isNaN(Kitchen) && !isNaN(GuestRoom)){
             var data = [Kitchen, LivingRoom ,Masterbedroom, Bathroom1, GuestRoom, Bathroom2];
@@ -126,6 +164,7 @@
         });
 
         $('#demo').click(function(){
+
             $('#MasterBedroomHeight').val(80);
             $('#MasterBedroomWidth').val(80);
             $('#LivingRoomHeight').val(100);
@@ -141,6 +180,8 @@
         });
     });
 </script>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
