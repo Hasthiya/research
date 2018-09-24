@@ -47,6 +47,10 @@
             margin-top: 30px;
         }
 
+        .padding{
+            padding: 5px;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -96,7 +100,7 @@
     </nav>
 </header>
 <div class="row">
-    <div id="Plan" class="mx-auto top30">
+    <div id="Plan" class="mx-auto top30 padding">
         <h1>To Generate 2D map press <span class="badge badge-success">Generate</span> Button</h1>
         <br>
         <h1>To load demo data press <span class="badge badge-primary">Demo</span> Button</h1>
@@ -189,15 +193,22 @@
 
             if (!isNaN(Masterbedroom) && !isNaN(LivingRoom) && !isNaN(Bathroom1) && !isNaN(Bathroom2) && !isNaN(Kitchen) && !isNaN(GuestRoom)) {
                 var data = [Kitchen, LivingRoom, Masterbedroom, Bathroom1, GuestRoom, Bathroom2];
-                var labels = ["Kitchen", "Living Room", "Master Bedroom", "Bathroom", "Guest Room", "Bathroom"];
+                var labels = [" ", " ", " ", " ", " ", " "];
                 Treemap.draw("Plan", 800, 450, data, labels, {
                     'label': {'fill': 'black'},
                     'box': {'fill': 'white', 'stroke': 'black', 'stroke-width': '3px'}
                 });
 
                 html2canvas($("#Plan")[0]).then(function(canvas) {
-                    $("#previewImage").append(canvas);
+                    jQuery('#Plan').empty();
                     getCanvas = canvas;
+                    var labels = ["Kitchen", "Living Room", "Master Bedroom", "Bathroom", "Guest Room", "Bathroom"];
+                    Treemap.draw("Plan", 800, 450, data, labels, {
+                        'label': {'fill': 'black'},
+                        'box': {'fill': 'white', 'stroke': 'black', 'stroke-width': '3px'}
+                    });
+
+
                 });
 
             } else {
