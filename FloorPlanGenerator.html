@@ -24,6 +24,12 @@
             padding-bottom: 3px;
             display:inline-block;
         }
+        .top5 { margin-top:5px; }
+        .top7 { margin-top:7px; }
+        .top10 { margin-top:10px; }
+        .top15 { margin-top:15px; }
+        .top17 { margin-top:17px; }
+        .top30 { margin-top:30px; }
         body {
         margin: 0;
         padding: 0;
@@ -71,7 +77,11 @@
         </nav>
     </header>
 <div class="row">
-    <div id="Plan" class="mx-auto"></div>
+    <div id="Plan" class="mx-auto top30">
+        <h1>To Generate 2D map press <span class="badge badge-success">Generate</span> Button</h1>
+        <br>
+        <h1>To load demo data press <span class="badge badge-primary">Demo</span> Button</h1>
+    </div>
     <div class="container">
         <div class="left">
             <label class="label">MasterBedroomHeight</label>
@@ -134,8 +144,8 @@
 
             <input type="number" id="GuestRoomWidth" class="GuestRoomWidth" placeholder="GuestRoomWidth">
             <br>
-            <button id="MyButton" >Generate</button>
-            <button id="demo">Demo</button>
+            <button id="MyButton" class="btn btn-success">Generate</button>
+            <button id="demo" class="btn btn-primary">Demo</button>
         </div>
     </div>
 </div>
