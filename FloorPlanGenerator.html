@@ -192,7 +192,7 @@
             let GuestRoom = (parseInt($(".GuestRoomHeight").val(), 10)) * (parseInt($(".GuestRoomWidth").val(), 10));
 
             if (!isNaN(Masterbedroom) && !isNaN(LivingRoom) && !isNaN(Bathroom1) && !isNaN(Bathroom2) && !isNaN(Kitchen) && !isNaN(GuestRoom)) {
-                var data = [Kitchen, LivingRoom, Masterbedroom, Bathroom1, GuestRoom, Bathroom2];
+                var data = [Bathroom1, GuestRoom, LivingRoom, Kitchen, Masterbedroom, Bathroom2];
                 var labels = [" ", " ", " ", " ", " ", " "];
                 Treemap.draw("Plan", 800, 450, data, labels, {
                     'label': {'fill': 'black'},
@@ -202,7 +202,7 @@
                 html2canvas($("#Plan")[0]).then(function(canvas) {
                     jQuery('#Plan').empty();
                     getCanvas = canvas;
-                    var labels = ["Kitchen", "Living Room", "Master Bedroom", "Bathroom", "Guest Room", "Bathroom"];
+                    var labels = ["Bathroom", "Guest Bedroom", "Living Room", "Kitchen", "Master Bedroom", "Bathroom"];
                     Treemap.draw("Plan", 800, 450, data, labels, {
                         'label': {'fill': 'black'},
                         'box': {'fill': 'white', 'stroke': 'black', 'stroke-width': '3px'}
