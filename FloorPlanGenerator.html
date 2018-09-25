@@ -100,78 +100,57 @@
     </nav>
 </header>
 <div class="row">
+
+    <div class="mx-auto top30 padding">
+
+        <div class="text-center border border-info p-5">
+
+            <p class="h4 mb-4 text-left">House Details</p>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Living Room ft<sup>2</sup></p>
+                <input type="number" id="LivingRoomArea" class="LivingRoomArea form-control col-md" placeholder="Living Room Sqft">
+            </div>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Kitchen ft<sup>2</sup></p>
+                <input type="number" id="KitchenArea" class="KitchenArea form-control col-md" placeholder="Kitchen Sqft">
+            </div>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Master Bedroom ft<sup>2</sup></p>
+                <input type="number" id="MasterBedroomArea" class="MasterBedroomArea form-control col-md" placeholder="Master Bedroom Sqft">
+            </div>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Bathroom #1 ft<sup>2</sup></p>
+                <input type="number" id="Bathroom1Area" class="Bathroom1Area form-control col-md" placeholder="Bathroom #1 Sqft">
+            </div>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Guest Bedroom ft<sup>2</sup></p>
+                <input type="number" id="GuestBedroomArea" class="GuestBedroomArea form-control col-md" placeholder="Guest Bedroom Sqft">
+            </div>
+
+            <div class="row mb-1 ">
+                <p class="text-left col-md ">Bathroom #2 ft<sup>2</sup></p>
+                <input type="number" id="Bathroom2Area" class="Bathroom2Area form-control col-md" placeholder="Bathroom #2 Sqft">
+            </div>
+
+            <button id="MyButton" class="btn btn-success btn-block my-2">Generate</button>
+            <button id="demo" class="btn btn-primary btn-block my-2">Demo</button>
+
+
+        </div>
+
+    </div>
     <div id="Plan" class="mx-auto top30 padding">
         <h1>To Generate 2D map press <span class="badge badge-success">Generate</span> Button</h1>
         <br>
         <h1>To load demo data press <span class="badge badge-primary">Demo</span> Button</h1>
     </div>
-    <div class="container">
-        <div class="left">
-            <label class="label">MasterBedroomHeight</label>
-            <br>
-            <label class="label">MasterBedroomWidth</label>
-            <br>
-            <label class="label">LivingRoomHeight</label>
-            <br>
-            <label class="label">LivingRoomWidth</label>
-            <br>
-            <label class="label">Bathroom1Height</label>
-            <br>
-            <label class="label">Bathroom1Width</label>
-            <br>
-            <label class="label">Bathroom2Height</label>
-            <br>
-            <label class="label">Bathroom2Width</label>
-            <br>
-            <label class="label">KitchenHeight</label>
-            <br>
-            <label class="label">KitchenWidth</label>
-            <br>
-            <label class="label">GuestRoomHeight</label>
-            <br>
-            <label class="label">GuestRoomWidth</label>
-        </div>
-        <div class="right">
-            <input type="number" id="MasterBedroomHeight" class="MasterBedroomHeight" placeholder="MasterBedroomHeight">
-            <br>
 
-            <input type="number" id="MasterBedroomWidth" class="MasterBedroomWidth" placeholder="MasterBedroomWidth">
-            <br>
 
-            <input type="number" id="LivingRoomHeight" class="LivingRoomHeight" placeholder="LivingRoomHeight">
-            <br>
-
-            <input type="number" id="LivingRoomWidth" class="LivingRoomWidth" placeholder="LivingRoomWidth">
-            <br>
-
-            <input type="number" id="Bathroom1Height" class="Bathroom1Height" placeholder="Bathroom1Height">
-            <br>
-
-            <input type="number" id="Bathroom1Width" class="Bathroom1Width" placeholder="Bathroom1Width">
-            <br>
-
-            <input type="number" id="Bathroom2Height" class="Bathroom2Height" placeholder="Bathroom2Height">
-            <br>
-
-            <input type="number" id="Bathroom2Width" class="Bathroom2Width" placeholder="Bathroom2Width">
-            <br>
-
-            <input type="number" id="KitchenHeight" class="KitchenHeight" placeholder="KitchenHeight">
-            <br>
-
-            <input type="number" id="KitchenWidth" class="KitchenWidth" placeholder="KitchenWidth">
-            <br>
-
-            <input type="number" id="GuestRoomHeight" class="GuestRoomHeight" placeholder="GuestRoomHeight">
-            <br>
-
-            <input type="number" id="GuestRoomWidth" class="GuestRoomWidth" placeholder="GuestRoomWidth">
-            <br>
-            <button id="MyButton" class="btn btn-success">Generate</button>
-            <button id="demo" class="btn btn-primary">Demo</button>
-            <button id="download" class="btn btn-primary">Next</button>
-        </div>
-    </div>
 </div>
 
 <script type="text/javascript">
@@ -182,17 +161,18 @@
     $(document).ready(function () {
         $('#MyButton').click(function () {
 
-            jQuery('#Plan').empty();
 
-            let Masterbedroom = (parseInt($(".MasterBedroomHeight").val(), 10)) * (parseInt($(".MasterBedroomWidth").val(), 10));
-            let LivingRoom = (parseInt($(".LivingRoomHeight").val(), 10)) * (parseInt($(".LivingRoomWidth").val(), 10));
-            let Bathroom1 = (parseInt($(".Bathroom1Height").val(), 10)) * (parseInt($(".Bathroom1Width").val(), 10));
-            let Bathroom2 = (parseInt($(".Bathroom2Height").val(), 10)) * (parseInt($(".Bathroom2Width").val(), 10));
-            let Kitchen = (parseInt($(".KitchenHeight").val(), 10)) * (parseInt($(".KitchenWidth").val(), 10));
-            let GuestRoom = (parseInt($(".GuestRoomHeight").val(), 10)) * (parseInt($(".GuestRoomWidth").val(), 10));
+
+            let Masterbedroom = (parseInt($(".MasterBedroomArea").val(), 10));
+            let LivingRoom = (parseInt($(".LivingRoomArea").val(), 10));
+            let Bathroom1 = (parseInt($(".Bathroom1Area").val(), 10));
+            let Bathroom2 = (parseInt($(".Bathroom2Area").val(), 10));
+            let Kitchen = (parseInt($(".KitchenArea").val(), 10));
+            let GuestRoom = (parseInt($(".GuestBedroomArea").val(), 10));
 
             if (!isNaN(Masterbedroom) && !isNaN(LivingRoom) && !isNaN(Bathroom1) && !isNaN(Bathroom2) && !isNaN(Kitchen) && !isNaN(GuestRoom)) {
-                var data = [Bathroom1, GuestRoom, LivingRoom, Kitchen, Masterbedroom, Bathroom2];
+                jQuery('#Plan').empty();
+                var data = [Bathroom2, GuestRoom, LivingRoom, Kitchen, Masterbedroom, Bathroom1];
                 var labels = [" ", " ", " ", " ", " ", " "];
                 Treemap.draw("Plan", 800, 450, data, labels, {
                     'label': {'fill': 'black'},
@@ -219,18 +199,13 @@
 
         $('#demo').click(function () {
 
-            $('#MasterBedroomHeight').val(80);
-            $('#MasterBedroomWidth').val(80);
-            $('#LivingRoomHeight').val(100);
+            $('#LivingRoomArea').val(80);
+            $('#KitchenArea').val(80);
+            $('#MasterBedroomArea').val(100);
             $('#LivingRoomWidth').val(100);
-            $('#Bathroom1Height').val(60);
-            $('#Bathroom1Width').val(40);
-            $('#Bathroom2Height').val(60);
-            $('#Bathroom2Width').val(40);
-            $('#KitchenHeight').val(40);
-            $('#KitchenWidth').val(60);
-            $('#GuestRoomHeight').val(100);
-            $('#GuestRoomWidth').val(80);
+            $('#Bathroom1Area').val(60);
+            $('#GuestBedroomArea').val(40);
+            $('#Bathroom2Area').val(60);
         });
     });
 
